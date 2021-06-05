@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.harshit.aopdemo.AfterFinallyDemoApp&apos; to &apos;AroundDemoApp&apos;&#x0D;&#x0A;- Original project: &apos;spring-demo-aop-z-z-around&apos;&#x0D;&#x0A;- Original element: &apos;com.harshit.aopdemo.AfterFinallyDemoApp&apos;&#x0D;&#x0A;- Renamed element: &apos;com.harshit.aopdemo.AroundDemoApp&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;AfterFinallyDemoApp&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.harshit.aopdemo{AfterFinallyDemoApp.java[AfterFinallyDemoApp" matchStrategy="1" name="AroundDemoApp" qualified="false" references="true" similarDeclarations="false" stamp="1621161792634" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,5 @@
+package com.harshit.springdemo.mvc;
+
+public class HelloController {
+
+}
