@@ -1,0 +1,47 @@
+
+<!DOCTYPE HTML>	
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<style>
+		.first{
+		  color:#35D835;
+		}
+		h4{
+			color:#35D835;
+		}
+		
+		.container{
+			    margin-left: 100px;
+    			margin-top: 50px;
+		}
+		span{
+			
+		}
+		body{
+			font-family:monospace;
+			font-weight:bold
+		}
+	</style>
+	<title>SIP Returns</title>
+</head>
+<body>
+<div class="container">
+	
+<p>Your Total Investment of <span class="first" th:text="${total}"></span> 
+</p>
+<p>Incrementing at <span th:text="${data.increment}"></span>% each year will become 
+</p>
+<h4><label th:text="${result}"></label></h4> 
+<p>@<span th:text="${data.rateOfReturn}"></span>% CAGR 
+after <span th:text="${data.years}"></span> years
+</p>
+</div>
+</body>
+</html>
