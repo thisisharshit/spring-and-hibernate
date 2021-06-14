@@ -13,7 +13,7 @@
     
     <bean id="myCoach" class="com.harshit.springdemo.TrackCoach"
     		init-method="doMyStartupStuff"
-    		destroy-method="destroy" >
+    		destroy-method="doMyCleanupStuff" >
     	<constructor-arg ref="myFortuneService"/>
     </bean>
     

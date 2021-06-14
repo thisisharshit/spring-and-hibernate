@@ -17,7 +17,7 @@
 --><!-- Note:  A "Server" is not itself a "Container", so you may not
      define subcomponents such as "Valves" at this level.
      Documentation at /docs/config/server.html
- --><Server port="-1" shutdown="SHUTDOWN">
+ --><Server port="8081" shutdown="SHUTDOWN">
   <Listener className="org.apache.catalina.startup.VersionLoggerListener"/>
   <!-- Security listener. Documentation at /docs/config/listeners.html
   <Listener className="org.apache.catalina.security.SecurityListener" />
@@ -153,7 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="web-customer-tracker" path="/web-customer-tracker" reloadable="true" source="org.eclipse.jst.jee.server:web-customer-tracker"/></Host>
+      <Context docBase="web-customer-tracker" path="/web-customer-tracker" reloadable="true" source="org.eclipse.jst.jee.server:web-customer-tracker"/><Context docBase="spring-mvc-demo" path="/spring-mvc-demo" reloadable="true" source="org.eclipse.jst.jee.server:spring-mvc-demo"/><Context docBase="spring-security-demo-01-base-app" path="/spring-security-demo-01-base-app" reloadable="true" source="org.eclipse.jst.jee.server:spring-security-demo-01-base-app"/><Context docBase="spring-security-demo-02-basic-security" path="/spring-security-demo-02-basic-security" reloadable="true" source="org.eclipse.jst.jee.server:spring-security-demo-02-basic-security"/><Context docBase="spring-security-demo-03-custom-login-form" path="/spring-security-demo-03-custom-login-form" reloadable="true" source="org.eclipse.jst.jee.server:spring-security-demo-03-custom-login-form"/><Context docBase="spring-security-demo-04-bootstrap-login-form" path="/spring-security-demo-04-bootstrap-login-form" reloadable="true" source="org.eclipse.jst.jee.server:spring-security-demo-04-bootstrap-login-form"/><Context docBase="spring-security-demo-05-logout" path="/spring-security-demo-05-logout" reloadable="true" source="org.eclipse.jst.jee.server:spring-security-demo-05-logout"/><Context docBase="spring-security-demo-07-user-roles" path="/spring-security-demo-07-user-roles" reloadable="true" source="org.eclipse.jst.jee.server:spring-security-demo-07-user-roles"/><Context docBase="spring-security-demo-08-jdbc-bcrypt" path="/spring-security-demo-08-jdbc-bcrypt" reloadable="true" source="org.eclipse.jst.jee.server:spring-security-demo-08-jdbc-bcrypt"/><Context docBase="spring-security-demo-09-jdbc-plaintext" path="/spring-security-demo" reloadable="true" source="org.eclipse.jst.jee.server:spring-security-demo-09-jdbc-plaintext"/><Context docBase="spring-crm-with-security-jdbc-encryption-authentication" path="/crm-with-security-jdbc-encryption-authentication" reloadable="true" source="org.eclipse.jst.jee.server:spring-crm-with-security-jdbc-encryption-authentication"/></Host>
     </Engine>
   </Service>
 </Server>

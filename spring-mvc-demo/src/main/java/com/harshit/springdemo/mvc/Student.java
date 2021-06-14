@@ -2,8 +2,17 @@ package com.harshit.springdemo.mvc;
 
 import java.util.LinkedHashMap;
 
+import javax.validation.constraints.NotNull;
+
 public class Student {
-	private String firstName,lastName,country;
+	
+	@NotNull(message = "is required")
+	private String firstName;
+	
+	@NotNull(message = "is required")
+	private String lastName;
+	
+	private String country;
 	private LinkedHashMap<String, String> countryOptions;
 	
 	private String favouriteLanguage;

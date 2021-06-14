@@ -6,12 +6,19 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Student Form</title>
+	<style>
+		.error{
+			color:red;
+		}
+	</style>
 </head>
 <body>
 	<form:form action="processForm" modelAttribute="student">
 	First Name: <form:input path="firstName"/> <%-- this will call the student.setFirstName() when clicking on submit --%>
+	<form:errors path="firstName" cssClass="error"/>
 	<br></br>
 	Last Name: <form:input path="lastName"/>
+	<form:errors path="lastName" cssClass="error"/>
 	<br></br>
 	Country: 
 	<form:select path="country">
