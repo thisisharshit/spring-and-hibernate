@@ -20,12 +20,21 @@ public class CustomerDAOImpl implements CustomerDAO {
 	
 	@Override
 	//@Transactional removing this because of service layer
-	public List<Customer> getCustomers() {
+	public List<Customer> getCustomers(int sortid) {
 		//get the currrent hibernate session
 		Session currentSession=sessionFactory.getCurrentSession();
 		
-		//create the query...sort by last name
-		Query<Customer> theQuery=currentSession.createQuery("from Customer order by lastName",Customer.class); 
+		//create the query...sort by given sort id
+		Query<Customer> theQuery=null;
+		if(sortid==1) {
+			theQuery=currentSession.createQuery("from Customer order by firstName",Customer.class); 
+		}
+		else if(sortid==2) {
+			theQuery=currentSession.createQuery("from Customer order by lastName",Customer.class);
+		}
+		else{
+			theQuery=currentSession.createQuery("from Customer order by email",Customer.class);
+		}
 		
 		//execute query and get results list
 		List<Customer> customers=theQuery.getResultList();
@@ -46,7 +55,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 	}
 
 	@Override
-	public Customer getCustomers(int id) {
+	public Customer getCustomer(int id) {
 		Session currentSession=sessionFactory.getCurrentSession();
 		
 		//read  from DB using the primary key id
@@ -63,6 +72,28 @@ public class CustomerDAOImpl implements CustomerDAO {
 		
 		theQuery.executeUpdate();
 		
+	}
+
+	@Override
+	public List<Customer> searchCustomer(String theSearchName) {
+		Session currentSession=sessionFactory.getCurrentSession();
+		
+		Query theQuery=null;
+		
+		if(theSearchName!=null && theSearchName.trim().length()>0) {
+			 // search for firstName or lastName ... case insensitive
+            theQuery =currentSession.createQuery("from Customer where lower(firstName) like :theName or lower(lastName) like :theName", Customer.class);
+            theQuery.setParameter("theName", "%" + theSearchName.toLowerCase() + "%");
+		}
+		else {
+			// theSearchName is empty ... so just get all customers
+            theQuery =currentSession.createQuery("from Customer", Customer.class);
+		}
+		 // execute query and get result list
+        List<Customer> customers = theQuery.getResultList();
+                
+        // return the results        
+        return customers;
 	}
 
 }
